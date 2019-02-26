@@ -112,7 +112,8 @@ class SiameseBiLSTM:
                   validation_data=([val_data_x1, val_data_x2, leaks_val], val_labels),
                   epochs=200, batch_size=64, shuffle=True,
                   callbacks=[early_stopping, model_checkpoint, tensorboard])
-
+        
+        model.save(bst_model_path)
         return bst_model_path
 
 
